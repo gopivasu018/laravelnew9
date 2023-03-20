@@ -27,6 +27,8 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                @guest
+                @else
                 &emsp;&emsp;&emsp;
                 <a class="navbar-brand" href="{{ url('/home') }}" style="font-size:14px;">
                     {{ __('Home') }}
@@ -35,7 +37,7 @@
                 <a class="navbar-brand" href="{{ url('/user') }}" style="font-size:14px;">
                     {{ __('Users') }}
                 </a>
-
+                @endguest
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
